@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+    <style type="text/css">
+        body {
+            display: flex; /* 整体设置为 flex 布局 */
+            flex-flow: column; /* 设置子项的排列方向为纵向排列 */
+            min-height: 100vh; /* 设置最小高度 */
+        }
+
+        .container {
+            flex: 1; /* 上部主容器自适应高度 */
+            display: flex; /* 主容器内部也采用 flex 布局，实现导航，内容主体和侧边栏的布局 */
+        }
+
+        footer {
+            height: 40px; /* 固定底部高度 */
+        }
+
+        nav, aside {
+            width: 200px; /* 导航和侧边栏固定宽度 */
+            min-width: 200px;
+            max-width: 200px;
+            height: auto; /* 高度自适应 */
+        }
+
+        main {
+            flex: 1; /* 内容自适应宽度 */
+        }
+
+        @media (max-width: 1000px) {
+            /* 在屏幕宽度不大于 1000px 时 */
+            aside {
+                display: none; /* 隐藏右侧边栏 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* 在屏幕宽度不大于 768px 时 */
+            container {
+                flex-direction: column; /* 设置排列方式为纵向排列 */
+            }
+
+            nav, aside, main { /* 覆盖前面定义的侧边栏和导航栏的宽度，设置为屏幕宽度 */
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+            }
+
+            aside { /* 覆盖在前一个@media 中隐藏的侧边栏设置 */
+                display: block;
+            }
+
+            main { /* 纵向排列之后，手动设置主题内容的高度 */
+                min-width: 90vh;
+                height: 90vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- 页面主体 -->
+        <nav> <!-- 导航菜单 -->
+            <div><a href="#">link1</a></div>
+            <div><a href="#">link item 2</a></div>
+            <div><a href="#">this is a long</a></div>
+            <div><a href="#">link item</a></div>
+        </nav>
+        <main> <!-- 页面内容主体 -->
+            <div class="block1">this is block1</div>
+            <div class="block2">this is block2</div>
+        </main>
+        <aside> <!-- 侧边栏 -->
+            <div class="side1">side 1</div>
+            <div class="side2">side 2</div>
+        </aside>
+    </div>
+    <footer> <!-- 页面底部 footer -->
+        copyright C <a href="//www.hujiang.com">hujiang</a>
+    </footer>
+</body>
+</html>

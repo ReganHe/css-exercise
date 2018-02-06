@@ -1,0 +1,79 @@
+@mixin clearfix() {
+  /* 定义清除浮动混合宏 */
+  content: "";
+  display: table;
+  clear: both;
+
+}
+
+@mixin col($i) {
+  /* 定义栅格列混合宏 */
+  float: left;
+  /* 浮动 */
+  width: percentage($i / 12);
+  /* 列宽 */
+  position: relative;
+  /* 相对定位 */
+  min-height: 1px;
+  /* 最小高度 */
+  padding-right: 15px;
+  /* 内边距 */
+  padding-left: 15px;
+  /* 内边距 */
+  box-sizing: border-box;
+  /* 将内边距纳入宽度计算 */
+}
+
+.container {
+  margin-left: auto;
+  /* 居中设定 */
+  margin-right: auto;
+  /* 居中设定 */
+  padding-right: 15px;
+  /* 内边距 */
+  padding-left: 15px;
+  /* 内边距 */
+  &::after {
+    @include clearfix;
+    /* 清除浮动 */
+  }
+}
+
+span {
+  text-align: center;
+  color: #828282;
+  font-size: 0.15rem;
+  text-decoration: none;
+  margin-top: 0.125rem;
+}
+
+.row {
+  margin-right: -15px;
+  /* 负值外边距 */
+  margin-left: -15px;
+  /* 负值外边距 */
+  &::after {
+    @include clearfix;
+    /* 清除浮动 */
+  }
+
+}
+
+@for $i from 1 through 12 {
+  /* 循环生成 */
+  .col-xs-#{$i} { /* 不同比例的列 */
+    @include col($i); /* 生成栅格列代码 */
+  }
+
+}
+
+@media (min-width: 414px) {
+  /* 宽度大于 414px 的设备 */
+  @for $i from 1 through 12 {
+    /* 循环生成 */
+    .col-sm-#{$i} { /* 特定设备下不同比例的列 */
+      @include col($i); /* 生成栅格列代码 */
+    }
+
+  }
+}

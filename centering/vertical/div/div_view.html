@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>采用视口长度单位实现的垂直居中效果</title>
+    <style type="text/css">
+        .container {
+            width: 200px;
+            padding: 20px;
+            margin: 50vh auto 0; /* 外边距，采用视口长度单位，1vh表示视口高度的1%，1vw表示视口宽度的1% */
+            transform: translateY(-50%); /* 上边缘向上移动自身高度的一半*/
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">我垂直居中啦</div>
+</body>
+</html>
