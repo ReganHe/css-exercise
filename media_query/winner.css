@@ -99,22 +99,22 @@
 
 @media screen and (max-width: 768px) {
     #wrapper, #header, #footer, #navigation {
-        width: 768px;
+        width: 100%; /*768px/768px*/
         margin: 0px;
     }
 
     #content, #sidebar {
-        margin-top: 20px;
-        padding-right: 10px;
-        padding-left: 10px;
-        width: 728px;
+        margin-top: 2.604167%; /*20/768;*/
+        padding-right: 1.3020833%; /* 10/768;*/
+        padding-left: 1.3020833%; /* 10/768;*/
+        width: 94.791667%; /*728/768px;*/
     }
 
     #sidebar {
         border-right: none;
         border-top: 2px solid #e8e8e8;
-        padding-top: 20px;
-        margin-bottom: 20px;
+        padding-top: 2.604167%; /*20/768;*/
+        margin-bottom: 2.604167%; /*20/768;*/
     }
 
     #logo {
@@ -127,7 +127,7 @@
         border-top-color: #bfbfbf;
         border-top-style: double;
         border-top-width: 4px;
-        padding-top: 20px;
+        padding-top: 2.604167%; /*20/768;*/
     }
 
     #navigation ul li a {
