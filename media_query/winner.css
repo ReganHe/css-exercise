@@ -1,43 +1,75 @@
 #wrapper {
     margin-right: auto;
     margin-left: auto;
-    width: 960px;
+    width: 96%; /*960px;*/
 }
 
 #header {
     margin-left: 10px;
     margin-right: 10px;
-    width: 940px;
-    background-color: #779307;
+    width: 97.9166667%; /*940/960*/
+    /*background-color: #779307;*/
+    border-bottom-color: #bfbfbf;
+    border-bottom-style: double;
+    border-bottom-width: 4px;
+}
+
+#logo {
+    display: block;
+    padding-top: 75px;
+    color: #0d0c0c;
+    text-transform: uppercase;
+    font-family: Arial, "Lucida Grande", Verdana, sans-serif;
+    font-size: 3em;
+}
+
+#logo span {
+    color: #dfdada;
 }
 
 #navigation {
     padding-bottom: 25px;
     margin-top: 26px;
-    margin-left: -10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    width: 940px;
+    margin-left: -1.0416667%; /* -10/960 */
+    padding-right: 1.0416667%; /* 10/960 */
+    padding-left: 1.0416667%; /* 10/960 */
+    width: 97.9166667%; /*940/960*/
 }
 
 #navigation ul li {
     display: inline-block;
+    margin-right: 1.6595745%; /* 25/940*/
 }
 
-#sidebar {
-    margin-right: 10px;
-    margin-left: 10px;
-    float: left;
-    background-color: #fe9c00;
-    width: 220px;
+#navigation ul li a {
+    height: 42px;
+    line-height: 42px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Arial, "Lucida Grande", Verdana, sans-serif;
+    font-size: 27px;
+    color: black;
 }
 
 #content {
+    margin-top: 58px;
     margin-right: 10px;
     float: right;
-    margin-left: 10px;
-    width: 700px;
-    background-color: #dedede;
+    width: 72.7083333%; /* 698/960*/
+}
+
+#content h1 {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-size: 4.3125em; /*69/16*/
+}
+
+#content h1 span {
+    display: block;
+    font-size: .550724638em; /*38/69,相对于父元素【#content h1】的文字大小*/
+    line-height: 1.052631579em; /*40/38,相对于本身【#content h1 span】的文字大小*/
+    color: #757474;
+
 }
 
 #sidebar {
@@ -45,11 +77,11 @@
     border-right-style: solid;
     border-right-width: 2px;
     margin-top: 58px;
-    padding-right: 10px;
     margin-right: 10px;
     margin-left: 10px;
     float: left;
-    width: 220px;
+    width: 22.7083333%; /* 218/960*/
+    /*background-color: #fe9c00;*/
 }
 
 #footer {
@@ -58,28 +90,31 @@
     margin-right: 10px;
     margin-left: 10px;
     clear: both;
-    background-color: #663300;
-    width: 940px;
+    /*background-color: #663300;*/
+    width: 97.9166667%; /* 940px;*/
+    border-top-width: 4px;
+    border-top-style: double;
+    border-top-color: #bfbfbf;
 }
 
 @media screen and (max-width: 768px) {
     #wrapper, #header, #footer, #navigation {
-        width: 768px;
+        width: 100%; /*768px/768px*/
         margin: 0px;
     }
 
     #content, #sidebar {
-        margin-top: 20px;
-        padding-right: 10px;
-        padding-left: 10px;
-        width: 728px;
+        margin-top: 2.604167%; /*20/768;*/
+        padding-right: 1.3020833%; /* 10/768;*/
+        padding-left: 1.3020833%; /* 10/768;*/
+        width: 94.791667%; /*728/768px;*/
     }
 
     #sidebar {
         border-right: none;
         border-top: 2px solid #e8e8e8;
-        padding-top: 20px;
-        margin-bottom: 20px;
+        padding-top: 2.604167%; /*20/768;*/
+        margin-bottom: 2.604167%; /*20/768;*/
     }
 
     #logo {
@@ -92,7 +127,7 @@
         border-top-color: #bfbfbf;
         border-top-style: double;
         border-top-width: 4px;
-        padding-top: 20px;
+        padding-top: 2.604167%; /*20/768;*/
     }
 
     #navigation ul li a {
